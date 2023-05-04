@@ -21,24 +21,25 @@ export default function EditSalesperson(){
     });
 
     React.useEffect(() => {
-if(isSuccess && data.id) {
-    setState({...state, id: data.id, first_name: data.first_name, last_name: data.last_name, address: data.address,
-                        phone: data.phone, start_date: data.start_date, termination_date: data.termination_date, 
-                        manager_id: data.manager_id});
-}
-    }, [isSuccess, data])
+			if(isSuccess && data.id) {
+					setState({...state, id: data.id, first_name: data.first_name, last_name: data.last_name, address: data.address,
+															phone: data.phone, start_date: data.start_date, termination_date: data.termination_date, 
+															manager_id: data.manager_id});
+			}
+					}, [isSuccess, data])
 
-    React.useEffect(() => {
-        if(isEditSuccess) {
-navigate("/salespeople");
-        }
-    })
+					React.useEffect(() => {
+							if(isEditSuccess) {
+			navigate("/salespeople");
+							}
+					})
 
 
     const handleInputChange = (e) => {
         const {name, value} = e.target;
         setState({...state, [name]: value});
     }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         
@@ -47,10 +48,8 @@ navigate("/salespeople");
     return(
         <div className="mx-10 my-4">
             <form onSubmit={handleSubmit}>
-                <Input type="date" name="start_date" label="Start Date" value={state.start_date} onChange={handleInputChange} />
                 <Input name="first_name" label="First Name" value={state.first_name} onChange={handleInputChange} />
                 <Input name="last_name" label="Last Name" value={state.last_name} onChange={handleInputChange} />
-
                 <Input name="address" label="Address" value={state.address} onChange={handleInputChange} />
                 <Input name="phone" label="Phone" value={state.phone} onChange={handleInputChange} />
                 <Input name="start_date" label="Start date" value={state.start_date} onChange={handleInputChange} />
