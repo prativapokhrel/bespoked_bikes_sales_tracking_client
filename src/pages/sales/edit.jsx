@@ -8,15 +8,13 @@ import { useGetAllProducts } from '../../hooks/useProducts';
 import { useGetAllCustomers } from '../../hooks/useCustomers';
 import { useGetAllSalespeople } from '../../hooks/useSalespeople';
 
-
-
 export default function EditSale(){
     const {id} = useParams();
     const navigate = useNavigate();
- const {data, isLoading, isSuccess} = useGetSaleById(id);
- const {mutate, isLoading: isEditing, isSuccess: isEditSuccess, error} = useEditSale();
+    const {data, isLoading, isSuccess} = useGetSaleById(id);
+    const {mutate, isLoading: isEditing, isSuccess: isEditSuccess, error} = useEditSale();
 
- const {data: productData, isLoading: isLoadinProducts, isError, error: productError, isSuccess: isProductsSuccess} = useGetAllProducts();
+    const {data: productData, isLoading: isLoadinProducts, isError, error: productError, isSuccess: isProductsSuccess} = useGetAllProducts();
     const {data: customerData, isLoading: isLoadinCustomers, error: customerError, isSuccess: isCustomersSuccess} = useGetAllCustomers();
     const {data: personData, isLoading: isLoadinPersons, error: personError, isSuccess: isPersonsSuccess} = useGetAllSalespeople();
 
@@ -29,10 +27,10 @@ export default function EditSale(){
     });
 
     React.useEffect(() => {
-if(isSuccess && data.id) {
-    setState({...state, id: data.id, product_id: data.product_id, salesperson_id: data.salesperson_id, customer_id: data.customer_id,
-                        sales_date: data.sales_date});
-}
+      if(isSuccess && data.id) {
+          setState({...state, id: data.id, product_id: data.product_id, salesperson_id: data.salesperson_id, customer_id: data.customer_id,
+                              sales_date: data.sales_date});
+      }
     }, [isSuccess, data])
 
     const [products, setProducts] = React.useState([]);
@@ -72,7 +70,7 @@ if(isSuccess && data.id) {
 
     React.useEffect(() => {
         if(isEditSuccess) {
-navigate("/sales");
+          navigate("/sales");
         }
     })
 
@@ -89,14 +87,12 @@ navigate("/sales");
         <div className="mx-10 my-4">
             <form onSubmit={handleSubmit}>
 
+              <Input name="sales_date" label="Sales Date" value={state.sales_date} onChange={handleInputChange} />
+              <Select label="Product" name="product_id" items={products} value={state.product_id} onChange={handleInputChange} />
+              <Select label="Customer" name="customer_id" items={customers} value={state.customer_id} onChange={handleInputChange} />
+              <Select label="Salesperson" name="salesperson_id" items={persons} value={state.salesperson_id} onChange={handleInputChange} />
 
-<Input name="sales_date" label="Sales Date" value={state.sales_date} onChange={handleInputChange} />
-<Select label="Product" name="product_id" items={products} value={state.product_id} onChange={handleInputChange} />
-<Select label="Customer" name="customer_id" items={customers} value={state.customer_id} onChange={handleInputChange} />
-<Select label="Salesperson" name="salesperson_id" items={persons} value={state.salesperson_id} onChange={handleInputChange} />
-
-
-<Button type="submit" label="Submit" loading={isLoading} disabled={isLoading} />
+              <Button type="submit" label="Submit" loading={isLoading} disabled={isLoading} />
 
             </form>
         </div>
