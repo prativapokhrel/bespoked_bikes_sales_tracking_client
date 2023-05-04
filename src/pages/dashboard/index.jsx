@@ -1,12 +1,3 @@
-// import * as React from 'react';
-
-// export default function Dashboard() {
-//     return(
-//         <div className="flex justify-center items-center w-screen h-screen">Dashboard</div>
-//     );
-// }
-
-
 import React, { useState } from 'react';
 import { useGetAllCommissions } from '../../hooks/useCommissions';
 import { createColumnHelper } from '@tanstack/react-table';
@@ -64,36 +55,36 @@ export default function Dashboard() {
     return(
         <div className="px-4 sm:px-6 lg:px-8 mt-5">
             <h3 className="text-2xl font-semibold leading-6 text-primary-500">
-            Quarterly Commission Report
-          </h3>
-          <div className='my-10'>
-          <div className="flex gap-2 items-center">
-                <div>
-                <select
-            id="quarter"
-            name="quarter"
-            value={params.quarter}
-            onChange={handleInputChange}
-          >
-            {quarterOptions.map(option => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
-                </div>
+                Quarterly Commission Report
+            </h3>
+            <div className='my-10'>
+                <div className="flex gap-2 items-center">
+                    <div>
+                        <select
+                            id="quarter"
+                                name="quarter"
+                                value={params.quarter}
+                                onChange={handleInputChange}
+                            >
+                            {quarterOptions.map(option => (
+                            <option key={option.value} value={option.value}>{option.label}</option>
+                            ))}
+                        </select>
+                    </div>
                 <div>
                 <div className="">
-          <select
-            id="year"
-            name="year"
-            value={params.year}
-            onChange={handleInputChange}
-          >
-            {yearOptions.map(option => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
-        </div>
+                    <select
+                        id="year"
+                        name="year"
+                        value={params.year}
+                        onChange={handleInputChange}
+                    >
+                        {yearOptions.map(option => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                        ))}
+                    </select>
                 </div>
+              </div>
             </div>
                 
             </div>

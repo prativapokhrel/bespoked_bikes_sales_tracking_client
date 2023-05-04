@@ -27,7 +27,7 @@ if(isSuccess && data.id) {
 
     React.useEffect(() => {
         if(isEditSuccess) {
-navigate("/customers");
+            navigate("/customers");
         }
     })
 
@@ -43,13 +43,12 @@ navigate("/customers");
     return(
         <div className="mx-10 my-4">
             <form onSubmit={handleSubmit}>
-<Input type="date" name="start_date" label="Start Date" value={state.start_date} onChange={handleInputChange} />
-<Input name="first_name" label="First Name" value={state.first_name} onChange={handleInputChange} />
-<Input name="last_name" label="Last Name" value={state.last_name} onChange={handleInputChange} />
+                <Input type="date" name="start_date" label="Start Date" value={state.start_date} onChange={handleInputChange} />
+                <Input name="first_name" label="First Name" value={state.first_name} onChange={handleInputChange} />
+                <Input name="last_name" label="Last Name" value={state.last_name} onChange={handleInputChange} />
 
-<Input name="address" label="Address" value={state.address} onChange={handleInputChange} />
-<Button type="submit" label="Submit" loading={isLoading} disabled={isLoading} />
-
+                <Input name="address" label="Address" value={state.address} onChange={handleInputChange} />
+                <Button type="submit" label="Submit" loading={isLoading} disabled={isLoading} />
             </form>
         </div>
     );
