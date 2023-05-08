@@ -41,7 +41,7 @@ export default function EditCustomer() {
     if (isEditSuccess) {
       navigate("/customers");
     }
-  });
+  }, [isEditSuccess]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

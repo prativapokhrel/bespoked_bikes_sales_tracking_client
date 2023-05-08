@@ -77,11 +77,10 @@ export default function CreateSale() {
     if (isSuccess) {
       navigate("/sales");
     }
-  });
+  }, [isSuccess]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setState({ ...state, [name]: value });
   };
   const handleSubmit = (e) => {

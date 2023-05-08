@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useGetAllSales } from "../../hooks/useSales";
 import { createColumnHelper } from "@tanstack/react-table";
 import Table from "../../components/table";

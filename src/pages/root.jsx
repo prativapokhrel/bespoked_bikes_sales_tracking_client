@@ -1,13 +1,16 @@
-import { Outlet, useNavigate, useParams } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import Layout from "../components/layout";
 import { useEffect } from "react";
 
 export default function Root() {
-  const params = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    navigate("/dashboard");
+    if(location.pathname==="/"){
+      navigate("/dashboard");
+    }
+
   }, []);
 
   return (

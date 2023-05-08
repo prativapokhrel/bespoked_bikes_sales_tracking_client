@@ -44,7 +44,7 @@ export default function EditProduct() {
     if (isEditSuccess) {
       navigate("/products");
     }
-  });
+  }, [isEditSuccess]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -103,8 +103,8 @@ export default function EditProduct() {
         <Button
           type="submit"
           label="Submit"
-          loading={isLoading}
-          disabled={isLoading}
+          loading={isLoading || isEditing}
+          disabled={isLoading || isEditing}
         />
       </form>
     </div>
