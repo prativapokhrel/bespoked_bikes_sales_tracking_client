@@ -1,11 +1,9 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 
-export default function Spinner({
-  color = 'text-white',
-}) {
+export default function Spinner({ color = "text-white" }) {
   return (
     <svg
-      className={clsx('mr-1 h-5 w-5 animate-spin', color)}
+      className={clsx("mr-1 h-5 w-5 animate-spin", color)}
       fill="none"
       viewBox="0 0 24 24"
     >

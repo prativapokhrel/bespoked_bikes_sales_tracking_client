@@ -1,12 +1,12 @@
-import { ExclamationCircleIcon } from '@heroicons/react/24/solid';
-import clsx from 'clsx';
+import { ExclamationCircleIcon } from "@heroicons/react/24/solid";
+import clsx from "clsx";
 
 export default function Input({
   label,
   name,
-  type = 'text',
-  className = '',
-  error = '',
+  type = "text",
+  className = "",
+  error = "",
   ...rest
 }) {
   return (
@@ -18,7 +18,6 @@ export default function Input({
         >
           {label}
         </label>
-        
       </div>
       <div className="relative rounded-md shadow-sm">
         <input
@@ -26,9 +25,9 @@ export default function Input({
           name={name}
           id={name}
           className={clsx(
-            'mt-1 block w-full rounded-md placeholder-gray-500 placeholder-opacity-30 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm',
+            "mt-1 block w-full rounded-md placeholder-gray-500 placeholder-opacity-30 shadow-sm focus:border-purple-500 focus:ring-purple-500 sm:text-sm",
             className,
-            error ? 'border-red-500' : 'border-gray-300',
+            error ? "border-red-500" : "border-gray-300"
           )}
           {...rest}
         />

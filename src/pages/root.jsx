@@ -3,12 +3,12 @@ import Layout from "../components/layout";
 import { useEffect } from "react";
 
 export default function Root() {
-    const params = useParams();
-    const navigate = useNavigate();
+  const params = useParams();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-navigate("/dashboard");
-    }, []);
+  useEffect(() => {
+    navigate("/dashboard");
+  }, []);
 
   return (
     <Layout>

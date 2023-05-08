@@ -1,5 +1,10 @@
-import { HomeIcon, UserIcon, CurrencyDollarIcon, RectangleStackIcon, UserGroupIcon } from "@heroicons/react/24/outline";
-
+import {
+  HomeIcon,
+  UserIcon,
+  CurrencyDollarIcon,
+  RectangleStackIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/outline";
 
 import clsx from "clsx";
 import { Link } from "react-router-dom";
@@ -10,7 +15,6 @@ const navigation = [
   { name: "Sales", href: "/sales", icon: CurrencyDollarIcon },
   { name: "Products", href: "/products", icon: RectangleStackIcon },
   { name: "Salespeople", href: "/salespeople", icon: UserGroupIcon },
-
 ];
 
 export default function Layout({ children }) {
@@ -66,7 +70,9 @@ export default function Layout({ children }) {
         </nav>
       </div>
       <main className="w-[80%] overflow-x-hidden">
-        <div key={children} className="p-5">{children}</div>
+        <div key={children} className="p-5">
+          {children}
+        </div>
       </main>
     </div>
   );
