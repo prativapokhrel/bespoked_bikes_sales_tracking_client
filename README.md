@@ -27,5 +27,5 @@ node -v
 
 ## Finally, Run the project
 ```shell
-    npm start  
+    npm dev   
 ```
